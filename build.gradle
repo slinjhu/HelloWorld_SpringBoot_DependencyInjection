@@ -1,0 +1,26 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+jar {
+  manifest {attributes('Main-Class': 'hello.Main')}
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "org.springframework.boot:spring-boot-starter-web"
+  compile "org.projectlombok:lombok:1.16.14"
+  testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
